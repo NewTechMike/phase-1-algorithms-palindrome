@@ -1,17 +1,10 @@
 function isPalindrome(word) {
   // Write your algorithm here
   const myArray = word.split("")
-  console.log("Array OG: ", myArray)
   const arrayCopy = myArray.slice()
-  //console.log("Array copy: ", arrayCopy)
   const backwards = arrayCopy.reverse()
-  console.log("backwards: ", backwards)
   for(let i in myArray){
-    if(myArray[i] !== backwards[i]){
-      /* console.log("Array OG2: ", myArray)
-      console.log("Array Iterate: ", myArray[i])
-      console.log("backwards2: ", backwards)
-      console.log("backwards iterate: ", backwards[i])  */     
+    if(myArray[i] !== backwards[i]){     
       return false      
     }
     else {
