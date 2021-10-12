@@ -1,9 +1,42 @@
 function isPalindrome(word) {
   // Write your algorithm here
+  const myArray = word.split("")
+  console.log("Array OG: ", myArray)
+  const arrayCopy = myArray.slice()
+  //console.log("Array copy: ", arrayCopy)
+  const backwards = arrayCopy.reverse()
+  console.log("backwards: ", backwards)
+  for(let i in myArray){
+    if(myArray[i] !== backwards[i]){
+      /* console.log("Array OG2: ", myArray)
+      console.log("Array Iterate: ", myArray[i])
+      console.log("backwards2: ", backwards)
+      console.log("backwards iterate: ", backwards[i])  */     
+      return false      
+    }
+    else {
+      return true
+    }
+  }
 }
+
 
 /* 
   Add your pseudocode here
+
+  The function "isPalindrome", takes a string (a word)
+  and returns true if it is a Palindrome
+
+  A word is considered a Palindrome if its the same forward
+  and backward
+
+  The code should compare the given word, to the word typed
+  out backwards. If these two are the same, return true
+  return false otherwise
+
+  To write it backwards, turn the word into an Array
+  then map it to another array starting from the last
+  letter then iterate backwards
 */
 
 /*
@@ -15,11 +48,21 @@ if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
-
+  
   console.log("");
-
+  
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+  
+  console.log("");
+  
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("avenger"));
+  
+  console.log("");
+  
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("level"));
 }
 
 module.exports = isPalindrome;
